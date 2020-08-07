@@ -9,12 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: npm install
-      - run: npx lerna bootstrap --ci
-      - run: |
-          pwd
-          ls -la
+
+      - name: Installing dependencies
+        run: npm install
+
+      - name: Lerna bootstrap
+        run: npx lerna bootstrap --ci
+
+      - name: Formating code
+        run: npm run format:check
+
+      - name: Testing projects
+        run: npm run test
