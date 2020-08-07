@@ -12,19 +12,19 @@ const resolvers = {
       return brands;
     },
     brandById: (_, { id }) => {
-      return brands.find((b) => b.id == id);
+      return brands.find(b => b.id == id);
     },
     allProducts: () => {
       return products;
     },
     productById: (_, { id }) => {
-      return products.find((p) => p.id === id);
+      return products.find(p => p.id === id);
     },
     greetingCatalog: (_, { name }) => {
       return greeting(name);
-    },
+    }
   },
-  Mutation: {},
+  Mutation: {}
 };
 
 module.exports = resolvers;

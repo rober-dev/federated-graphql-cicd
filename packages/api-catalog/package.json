@@ -11,10 +11,18 @@
     "express": "^4.17.1",
     "graphql": "^15.3.0"
   },
+  "devDependencies": {
+    "jest": "^26.2.2"
+  },
   "scripts": {
     "debug": "node --inspect=0.0.0.0:9229 ./src/index.js",
     "dev": "nodemon --legacy-watch --watch ./src --watch ./data ./src/index.js",
     "dev:debug": "nodemon --legacy-watch --watch ./src --watch ./data --inspect=0.0.0.0:9229 ./src/index.js",
-    "start": "node ./src/index.js --production"
+    "start": "node ./src/index.js --production",
+    "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
+    "test": "NODE_ENV=test jest __tests__",
+    "test:watch": "NODE_ENV=test jest __tests__ --watch",
+    "test:watch:debug": "NODE_ENV=test jest __tests__ --watch --runInBand"
   }
 }

@@ -3,7 +3,7 @@
   "packages": ["packages/*"],
   "version": "independent",
   "useWorkspaces": true,
-  "commands": {
+  "command": {
     "publish": {
       "ignoreChanges": ["*.md"],
       "message": "chore: release"

@@ -26,8 +26,8 @@ const apolloGateway = new ApolloGateway({
   port: PORT,
   serviceList: [
     { name: 'api-auth', url: `${API_AUTH}/graphql` },
-    { name: 'api-catalog', url: `${API_CATALOG}/graphql` },
-  ],
+    { name: 'api-catalog', url: `${API_CATALOG}/graphql` }
+  ]
 });
 
 // -----------------------------------------
@@ -46,9 +46,9 @@ const run = async () => {
     context: async ({ req, res }) => {
       return {
         req,
-        res,
+        res
       };
-    },
+    }
   });
 
   // Apply Express middleware to Apollo
@@ -60,7 +60,7 @@ const run = async () => {
   // Setup cors
   const corsOptions = {
     credentials: true,
-    origin: [WEB],
+    origin: [WEB]
   };
   app.use(cors(corsOptions));
 

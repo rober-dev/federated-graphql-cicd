@@ -20,7 +20,7 @@ const run = async () => {
     schema: buildFederatedSchema([{ typeDefs, resolvers }]),
     context: async ({ req, res }) => {
       return { req, res };
-    },
+    }
   });
 
   // Add express

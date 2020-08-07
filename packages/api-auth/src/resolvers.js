@@ -12,9 +12,9 @@ const resolvers = {
     },
     greetingAuth: (_, { name }) => {
       return greeting(name);
-    },
+    }
   },
-  Mutation: {},
+  Mutation: {}
 };
 
 module.exports = resolvers;
