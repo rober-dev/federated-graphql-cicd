@@ -1,0 +1,15 @@
+{
+  "name": "federated-graphql-cicd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rober-dev/federated-graphql-cicd.git",
+  "author": "rober <me@rober.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

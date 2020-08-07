@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "Nike",
+    "url": "https://www.nike.com"
+  },
+  {
+    "id": "2",
+    "name": "Adidas",
+    "url": "https://www.adidas.com"
+  },
+  {
+    "id": "3",
+    "name": "Puma",
+    "url": "https://www.puma.com"
+  }
+]
