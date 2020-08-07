@@ -5,6 +5,7 @@
   "useWorkspaces": true,
   "commands": {
     "publish": {
+      "ignoreChanges": ["*.md"],
       "message": "chore: release"
     }
   }
