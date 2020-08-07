@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "email": "rober@galvintec",
+    "username": "rober",
+    "firstName": "Rober",
+    "lastName": "Fraga"
+  },
+  {
+    "id": "2",
+    "email": "carlos@galvintec",
+    "username": "carlos",
+    "firstName": "Carlos",
+    "lastName": ""
+  },
+  {
+    "id": "3",
+    "email": "andres@galvintec",
+    "username": "andres",
+    "firstName": "Andrés",
+    "lastName": "Pérez Vidal"
+  },
+  {
+    "id": "4",
+    "email": "pablo@galvintec",
+    "username": "pablo",
+    "firstName": "Pablo",
+    "lastName": ""
+  }
+]

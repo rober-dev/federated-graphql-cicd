@@ -1,0 +1,19 @@
+{
+  "name": "@federated-graphql-cicd/api-auth",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/federation": "^0.19.1",
+    "apollo-server-express": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0"
+  },
+  "scripts": {
+    "debug": "node --inspect=0.0.0.0:9229 ./src/index.js",
+    "dev": "nodemon --legacy-watch --watch ./src --watch ./data ./src/index.js",
+    "dev:debug": "nodemon --legacy-watch --watch ./src --watch ./data --inspect=0.0.0.0:9229 ./src/index.js",
+    "start": "node ./src/index.js --production"
+  }
+}

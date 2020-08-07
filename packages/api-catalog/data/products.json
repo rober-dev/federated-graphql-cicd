@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Nike Air 1980",
+    "price": 80.95
+  },
+  {
+    "id": "2",
+    "name": "Nike Air Force",
+    "price": 109.95
+  },
+  {
+    "id": "3",
+    "name": "Nike Blazer Mid júnior",
+    "price": 80
+  },
+  {
+    "id": "4",
+    "name": "Adidas Mutator Predator 20.3 FG",
+    "price": 90
+  },
+  {
+    "id": "5",
+    "name": "Adidas Tensaur Run para bebé",
+    "price": 30
+  },
+  {
+    "id": "6",
+    "name": "PUMA Future Rider Play On para mujer",
+    "price": 90
+  }
+]
