@@ -20,5 +20,6 @@ module.exports = gql`
     brandById(id: ID!): Brand
     allProducts: [Product]!
     productById(id: ID!): Product
+    greetingCatalog(name: String): String
   }
 `;

@@ -13,5 +13,6 @@ module.exports = gql`
 
   extend type Query {
     allUsers: [User!]!
+    greetingAuth(name: String): String
   }
 `;

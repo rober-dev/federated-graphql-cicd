@@ -1,3 +1,6 @@
+// Custom libs
+const { greeting } = require('@federated-graphql-cicd/api-common/src');
+
 // Get data
 const brands = require('../data/brands');
 const products = require('../data/products');
@@ -16,6 +19,9 @@ const resolvers = {
     },
     productById: (_, { id }) => {
       return products.find((p) => p.id === id);
+    },
+    greetingCatalog: (_, { name }) => {
+      return greeting(name);
     },
   },
   Mutation: {},

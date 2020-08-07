@@ -2,5 +2,8 @@
   "name": "@federated-graphql-cicd/api-common",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/."
+  }
 }
