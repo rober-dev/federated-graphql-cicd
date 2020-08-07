@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.5.5...@federated-graphql-cicd/api-catalog@0.5.6) (2020-08-07)
+
+
+### Bug Fixes
+
+* Remove head brand ([4d66e49](https://github.com/rober-dev/federated-graphql-cicd/commit/4d66e494346ccf5af0bdb327f94bd2fcbb31d931))
+* Update Nike Air Force price ([cd901b5](https://github.com/rober-dev/federated-graphql-cicd/commit/cd901b54c136405046f080f81761af23cce5d7c9))
+* Update price puma ([87277aa](https://github.com/rober-dev/federated-graphql-cicd/commit/87277aad58c5b8a36a93c68c5132ea23b33117f1))
+
+
+
+
+
 ## [0.5.5](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.5.4...@federated-graphql-cicd/api-catalog@0.5.5) (2020-08-07)
 
 **Note:** Version bump only for package @federated-graphql-cicd/api-catalog
