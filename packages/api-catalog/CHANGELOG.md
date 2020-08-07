@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.6.0...@federated-graphql-cicd/api-catalog@0.6.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* Remove s ([e4335b2](https://github.com/rober-dev/federated-graphql-cicd/commit/e4335b2d8bdd35ffcdc0e5de55a61435aa46b5dc))
+
+
+
+
+
 # [0.6.0](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.5.6...@federated-graphql-cicd/api-catalog@0.6.0) (2020-08-07)
 
 
