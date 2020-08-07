@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.5.6...@federated-graphql-cicd/api-catalog@0.6.0) (2020-08-07)
+
+
+### Features
+
+* allow provided config object to extend other configs ([86e14e5](https://github.com/rober-dev/federated-graphql-cicd/commit/86e14e5983dc50843a3203a091cf61ef6e6d5b69))
+
+
+### BREAKING CHANGES
+
+* `extends` key in config file is now used for extending other config files
+
+
+
+
+
 ## [0.5.6](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.5.5...@federated-graphql-cicd/api-catalog@0.5.6) (2020-08-07)
 
 
