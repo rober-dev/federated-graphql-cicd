@@ -15,3 +15,6 @@ jobs:
           node-version: "12.x"
       - run: npm install
       - run: npx lerna bootstrap --ci
+      - run: |
+          pwd
+          ls -la
