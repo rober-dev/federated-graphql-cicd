@@ -38,10 +38,10 @@ jobs:
 
       - name: Build image
         if: success()
-        run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${IMAGE_TAG} .
+        run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }} .
 
       - name: Push to docker registry
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push sincronize/federated-graphql-cicd-api-catalog:${IMAGE_TAG}
+          args: push sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }}
