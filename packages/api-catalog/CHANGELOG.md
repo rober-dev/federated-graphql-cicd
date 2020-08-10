@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @federated-graphql-cicd/api-catalog
 
-
-
-
-
 # [0.7.0](https://github.com/rober-dev/federated-graphql-cicd/compare/@federated-graphql-cicd/api-catalog@0.6.1...@federated-graphql-cicd/api-catalog@0.7.0) (2020-08-07)
 
 ### Features
