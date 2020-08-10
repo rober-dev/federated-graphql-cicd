@@ -23,11 +23,10 @@ jobs:
         with:
           args: "bootstrap"
 
-      - name: Formating code
-        run: npm run format:check
-
-      - name: Testing projects
-        run: npm run test
+      # - name: Formating code
+      #   run: npm run format:check
+      # - name: Testing projects
+      #   run: npm run test
 
   build-docker-images:
     runs-on: ubuntu-latest
