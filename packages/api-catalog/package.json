@@ -29,6 +29,8 @@
     "docker:build": "docker build -t sincronize/federated-graphql-cicd-api-catalog:latest .",
     "docker:push": "docker push sincronize/federated-graphql-cicd-api-catalog:latest",
     "ci:docker:dev": "npm run docker:build:dev && npm run docker:push:dev",
-    "ci:docker": "npm run docker:build && npm run docker:push"
+    "ci:docker": "npm run docker:build && npm run docker:push",
+    "ci:deploy:dev": "npm run ci:docker:dev",
+    "ci:deploy": "npm run ci:docker"
   }
 }
