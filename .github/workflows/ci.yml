@@ -29,12 +29,31 @@ jobs:
       - name: Testing projects
         run: npm run test
 
-      - name: Log into registry
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ secrets.DOCKER_REGISTRY_URL }} -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      # - name: Log into registry
+      #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${{ secrets.DOCKER_REGISTRY_URL }} -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
-      - name: Build the tagged Docker image
-        run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:dev .
+      # - name: Build the tagged Docker image
+      #   if: success()
+      #   run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:dev .
 
-      - name: Push image
-        run: |
-          docker push sincronize/federated-graphql-cicd-api-catalog:dev
+      # - name: Push image
+      #   if: success()
+      #   run: |
+      #     docker push sincronize/federated-graphql-cicd-api-catalog:dev
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${IMAGE_TAG} .
+
+      - name: Push to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push sincronize/federated-graphql-cicd-api-catalog:${IMAGE_TAG}
