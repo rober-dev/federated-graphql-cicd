@@ -30,6 +30,7 @@
     "format": "lerna run format --stream",
     "format:check": "lerna run format:check --stream",
     "lint": "eslint ./",
-    "docker:build:api-catalog:dev": "docker build -f ./packages/api-catalog/Dockerfile -t federated-graphql-cicd-api-catalog:dev ."
+    "ci:deploy": "lerna run ci:deploy --since $TAG",
+    "new-version": "lerna version --conventional-commits --yes"
   }
 }

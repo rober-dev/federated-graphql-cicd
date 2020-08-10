@@ -32,6 +32,9 @@ jobs:
       - name: Testing projects
         run: npm run test
 
+      - name: Create a new version
+        run: yarn new-version
+
       - name: Login to docker hub
         if: success()
         uses: actions-hub/docker/login@master
@@ -39,13 +42,16 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
+      - run: git tag
+      - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
+      - run: echo $TAG
+      - run: yarn ci:deploy
       # Build image
-      - name: Build image
-        if: success()
-        run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }} .
-
-      - name: Push to docker registry
-        if: success()
-        uses: actions-hub/docker@master
-        with:
-          args: push sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }}
+      # - name: Build image
+      #   if: success()
+      #   run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }} .
+      # - name: Push to docker registry
+      #   if: success()
+      #   uses: actions-hub/docker@master
+      #   with:
+      #     args: push sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }}
