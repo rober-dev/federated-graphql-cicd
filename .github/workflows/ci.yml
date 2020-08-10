@@ -32,6 +32,11 @@ jobs:
       - name: Testing projects
         run: npm run test
 
+      - name: Set git Login
+        run: |
+          git config --global user.email "me@rober.dev" 
+          git config --global user.name "Rober"
+
       - name: Create a new version
         run: yarn new-version
 
