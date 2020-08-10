@@ -12,7 +12,7 @@ const resolvers = {
       return brands;
     },
     brandById: (_, { id }) => {
-      return brands.find(b => b.id == id);
+      return brands.find(b => b.id === id);
     },
     allProducts: () => {
       return products;
