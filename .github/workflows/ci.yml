@@ -32,10 +32,10 @@ jobs:
       # - name: Testing projects
       #   run: npm run test
 
-      - name: Set git Login
-        run: |
-          git config --global user.email "me@rober.dev" 
-          git config --global user.name "Rober"
+      - name: Configure git credentials
+        uses: OleksiyRudenko/gha-git-credentials@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create a new version
         run: yarn new-version
@@ -49,7 +49,7 @@ jobs:
 
       - run: git tag
       - name: Get last changed tag
-        run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`'
+        run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
 
       - run: echo $TAG
       - run: yarn ci:deploy:dev
