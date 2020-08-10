@@ -49,7 +49,7 @@ jobs:
 
       - run: git tag
       - name: Get last changed tag
-        run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
+        run: export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`
 
       - run: echo $TAG
       - run: yarn ci:deploy:dev
