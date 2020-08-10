@@ -29,6 +29,6 @@
     "test": "lerna run test --stream",
     "format": "lerna run format --stream",
     "format:check": "lerna run format:check --stream",
-    "docker:build:api-catalog": "docker build -f ./packages/api-catalog/Dockerfile -t federated-graphql-cicd-api-catalog ."
+    "docker:build:api-catalog:dev": "docker build -f ./packages/api-catalog/Dockerfile -t federated-graphql-cicd-api-catalog:dev ."
   }
 }
