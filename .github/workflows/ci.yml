@@ -39,6 +39,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
+      # Build image
       - name: Build image
         if: success()
         run: docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:${{ github.sha }} .
