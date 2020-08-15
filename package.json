@@ -32,5 +32,8 @@
     "ci:deploy": "lerna run ci:deploy --since $TAG",
     "ci:deploy:dev": "lerna run ci:deploy:dev --since $TAG",
     "new-version": "lerna version --conventional-commits --yes"
+  },
+  "dependencies": {
+    "node-jq": "^1.11.1"
   }
 }
