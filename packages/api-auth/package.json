@@ -1,6 +1,6 @@
 {
   "name": "@federated-graphql-cicd/api-auth",
-  "version": "0.0.7",
+  "version": "2.7.3",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
