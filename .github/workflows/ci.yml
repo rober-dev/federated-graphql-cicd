@@ -35,8 +35,8 @@ jobs:
       - name: Formating code
         run: npm run ci:format:check
 
-      - name: Linter code
-        run: npm run ci:lint
+      # - name: Linter code
+      #   run: npm run ci:lint
 
       - name: Testing projects
         run: npm run ci:test
