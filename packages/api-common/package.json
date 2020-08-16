@@ -1,15 +1,13 @@
 {
   "name": "@federated-graphql-cicd/api-common",
-  "version": "3.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src/.",
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
     "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "test": "NODE_ENV=test jest __tests__",
-    "test:watch": "NODE_ENV=test jest __tests__ --watch",
-    "test:watch:debug": "NODE_ENV=test jest __tests__ --watch --runInBand"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch"
   },
   "devDependencies": {
     "jest": "^26.2.2"

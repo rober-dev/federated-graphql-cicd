@@ -52,5 +52,4 @@ jobs:
         run: |
           export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`
           echo $TAG
-
-      - run: yarn ci:deploy:dev
+      # - run: yarn ci:deploy:dev

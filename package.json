@@ -1,6 +1,7 @@
 {
   "name": "federated-graphql-cicd",
   "main": "index.js",
+  "version": "1.0.0",
   "repository": "https://github.com/rober-dev/federated-graphql-cicd.git",
   "author": "rober <me@rober.dev>",
   "license": "MIT",
@@ -29,11 +30,12 @@
     "format": "lerna run format --stream",
     "format:check": "lerna run format:check --stream",
     "lint": "eslint ./",
+    "ci:test": "lerna run ci:test",
     "ci:deploy": "lerna run ci:deploy --since $TAG",
-    "ci:deploy:dev": "lerna run ci:deploy:dev --since $TAG",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "node-jq": "^1.11.1"
   }
 }

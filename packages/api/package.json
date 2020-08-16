@@ -1,11 +1,11 @@
 {
   "name": "@federated-graphql-cicd/api",
-  "version": "3.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@federated-graphql-cicd/api-common": "^0.0.0",
     "@apollo/gateway": "^0.19.1",
-    "@federated-graphql-cicd/api-common": "^3.0.0",
     "apollo-engine": "^1.1.2",
     "apollo-server-express": "^2.16.1",
     "body-parser": "^1.19.0",
@@ -24,10 +24,12 @@
     "start": "node ./src/index.js --production",
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
     "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "test": "NODE_ENV=test jest __tests__",
-    "test:watch": "NODE_ENV=test jest __tests__ --watch",
-    "test:watch:debug": "NODE_ENV=test jest __tests__ --watch --runInBand",
-    "ci:deploy": "echo 'api ci:deploy'",
-    "ci:deploy:dev": "echo 'api ci:deploy:dev'"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "docker:build": "docker build -t sincronize/federated-graphql-cicid-api:latest .",
+    "docker:push": "docker push sincronize/federated-graphql-cicid-api:latest",
+    "ci:test": "cross-env NODE_ENV=test jest --ci --runInBand --detectOpenHandles --forceExit",
+    "ci:docker": "npm run docker:build && npm run docker:push",
+    "ci:deploy": "npm run ci:docker"
   }
 }
