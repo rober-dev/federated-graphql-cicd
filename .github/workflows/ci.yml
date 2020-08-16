@@ -50,12 +50,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # DOCKER HUB LOGIN
-      - run: yarn docker:deploy
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-
       # Print what changed
       - run: ./node_modules/.bin/lerna changed
 
@@ -71,3 +65,6 @@ jobs:
       - run: echo "$LATEST_TAG"
 
       - run: yarn ci:deploy
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
