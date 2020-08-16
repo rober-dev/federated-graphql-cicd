@@ -58,6 +58,7 @@ jobs:
       - name: Get last changed tag
         run: |
           echo "::set-env name=LATEST_TAG::$(git describe --tags --abbrev=0)"
-          echo $TAG
+
+      - run: echo "$LATEST_TAG"
 
       - run: yarn ci:deploy:dev

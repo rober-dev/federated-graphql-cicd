@@ -31,7 +31,7 @@
     "format:check": "lerna run format:check --stream",
     "lint": "eslint ./",
     "ci:test": "lerna run ci:test",
-    "ci:deploy": "lerna run ci:deploy --since $TAG",
+    "ci:deploy": "lerna run ci:deploy --since $LATEST_TAG",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "dependencies": {
