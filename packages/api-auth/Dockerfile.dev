@@ -14,7 +14,7 @@ RUN npm i nodemon -g --loglevel notice
 RUN rm -rf logs
 
 # Port to expose
-EXPOSE 4002
+EXPOSE 4001
 
 # Run app
-CMD /wait && cd packages/api-catalog && yarn dev:debug
+CMD /wait && cd packages/api-auth && yarn dev:debug

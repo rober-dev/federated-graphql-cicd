@@ -7,14 +7,10 @@ WORKDIR /usr/src/app
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
 RUN chmod +x /wait
 
-# Install nodemon
-RUN npm i nodemon -g --loglevel notice
-
-# Remove logs
-RUN rm -rf logs
+RUN npm i nodemon -g
 
 # Port to expose
-EXPOSE 4002
+EXPOSE 4000
 
 # Run app
-CMD /wait && cd packages/api-catalog && yarn dev:debug
+CMD /wait && cd packages/api && yarn dev:debug
