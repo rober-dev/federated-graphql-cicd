@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          # pulls all commits (needed for lerna to correctly version)
+          # see https://stackoverflow.com/a/60184319/9285308 & https://github.com/actions/checkout
+          fetch-depth: "0"
+
+      - name: Pulls all tags (needed for lerna to correctly version)
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* # see https://stackoverflow.com/a/60184319/9285308
 
       - name: Use NodeJS
         uses: actions/setup-node@v1
