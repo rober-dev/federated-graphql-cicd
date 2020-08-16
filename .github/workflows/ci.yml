@@ -6,7 +6,7 @@ on:
 
 jobs:
   install-dependencies-build-docker-image:
-    if: ${{ github.ref != 'refs/heads/develop' && !contains(github.event.head_commit.message, '[skip ci]') }} # public; ignore commits with `[skip ci]`
+    # if: ${{ github.ref != 'refs/heads/develop' && !contains(github.event.head_commit.message, '[skip ci]') }} # public; ignore commits with `[skip ci]`
 
     runs-on: ubuntu-latest
     steps:
