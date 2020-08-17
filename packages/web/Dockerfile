@@ -14,8 +14,9 @@ RUN npm install --production
 
 # Copy app source
 COPY ./packages/api-common ./packages/api-common
-COPY ./packages/api ./packages/api
+COPY ./packages/web ./packages/web
 
-EXPOSE 4000
-CMD /wait && cd ./packages/api && yarn start
+EXPOSE 3000
+
+CMD /wait && cd ./packages/web && yarn build && yarn start
 USER node

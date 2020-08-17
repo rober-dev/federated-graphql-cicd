@@ -37,7 +37,6 @@
     "new-version": "cross-env NODE_ENV=CI lerna version --conventional-commits --yes"
   },
   "dependencies": {
-    "cross-env": "^7.0.2",
-    "node-jq": "^1.11.1"
+    "cross-env": "^7.0.2"
   }
 }
