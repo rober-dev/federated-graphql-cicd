@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.9](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.8...v3.0.9) (2020-08-18)
+
+
+
+## 3.0.7 (2020-08-17)
+
+**Note:** Version bump only for package @federated-graphql-cicd/api-auth
+
+
+
+
+
 ## [3.0.8](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.7...v3.0.8) (2020-08-17)
 
 **Note:** Version bump only for package @federated-graphql-cicd/api-auth
