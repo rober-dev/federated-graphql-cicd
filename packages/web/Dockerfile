@@ -1,22 +1,29 @@
 FROM node:alpine
+
+# Create app directory
 WORKDIR /usr/src/app
 
 ## The wait.sh script
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
 RUN chmod +x /wait
 
-ENV NODE_ENV=production
+# Install lerna
+RUN npm i lerna -g
 
 # Install lerna dependencies
 COPY package*.json ./
+COPY lerna.json .
 
 # Copy app source
-COPY ./packages/api-common ./packages/api-common
 COPY ./packages/web ./packages/web
 
-RUN yarn install --frozen-lockfile
+# Lerna bootstrap
+RUN lerna bootstrap
 
+# Port to expose
 EXPOSE 3000
 
-CMD /wait && cd ./packages/web && yarn build && yarn start
-USER node
+ENV NODE_ENV=production
+
+# Run app
+CMD /wait && cd packages/web && yarn build &&  yarn start

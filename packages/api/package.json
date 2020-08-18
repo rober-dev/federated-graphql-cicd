@@ -27,11 +27,12 @@
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "docker:login": "echo \"$DOCKERHUB_PASSWORD\" | docker login \"$DOCKER_REGISTRY_URL\" --username \"$DOCKERHUB_USERNAME\" --password-stdin",
-    "docker:build": "docker build -t sincronize/federated-graphql-cicid-api:latest .",
-    "docker:tag-version": "docker tag sincronize/federated-graphql-cicid-api:latest sincronize/federated-graphql-cicid-api:$LATEST_TAG",
-    "docker:push": "docker push sincronize/federated-graphql-cicid-api:latest",
+    "docker:build": "docker build -t sincronize/federated-graphql-cicd-api:latest -f Dockerfile ../../",
+    "docker:tag-version": "docker tag sincronize/federated-graphql-cicd-api:latest sincronize/federated-graphql-cicd-api:$LATEST_TAG",
+    "docker:push": "docker push sincronize/federated-graphql-cicd-api:latest",
+    "docker:push:tag-version": "docker push sincronize/federated-graphql-cicd-api:$LATEST_TAG",
     "ci:test": "cross-env NODE_ENV=test jest --ci --runInBand --detectOpenHandles --forceExit",
-    "ci:docker": "npm run docker:build && docker:tag-version && npm run docker:push",
+    "ci:docker": "npm run docker:build && npm run docker:tag-version && npm run docker:push && npm run docker:push:tag-version",
     "ci:deploy": "npm run ci:docker"
   }
 }
