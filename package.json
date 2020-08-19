@@ -34,6 +34,7 @@
     "ci:test": "cross-env NODE_ENV=test lerna run ci:test",
     "ci:format:check": "cross-env NODE_ENV=CI lerna run ci:format:check",
     "ci:deploy": "cross-env NODE_ENV=CI lerna run ci:deploy --since $LATEST_TAG",
+    "ci:deploy:tag-version": "cross-env NODE_ENV=CI lerna run ci:deploy:tag-version --since $LATEST_TAG",
     "new-version": "cross-env NODE_ENV=CI lerna version --conventional-commits --yes"
   },
   "dependencies": {
