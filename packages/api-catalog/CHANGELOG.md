@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.16](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.15...v3.0.16) (2020-08-19)
+
+
+### Bug Fixes
+
+* modify brands.json ([7694137](https://github.com/rober-dev/federated-graphql-cicd/commit/7694137addb2d7a2823543baedf991c070f0af67))
+
+
+
+
+
 ## [3.0.15](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.14...v3.0.15) (2020-08-19)
 
 **Note:** Version bump only for package @federated-graphql-cicd/api-catalog
