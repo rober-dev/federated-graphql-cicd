@@ -19,9 +19,9 @@ RUN yarn
 
 ENV NODE_ENV=production
 
-EXPOSE 4002
+EXPOSE 3000
 
 # Run app
-CMD /wait && cd packages/api-catalog && yarn start
+CMD /wait && cd packages/web && yarn build && yarn start
 
 USER node

@@ -6,7 +6,7 @@ on:
 
 jobs:
   install-dependencies-build-docker-image:
-    if: ${{ github.ref != 'refs/heads/develop' && !contains(github.event.head_commit.message, '[skip ci]') }} # public; ignore commits with `[skip ci]`
+    if: "!contains(github.event.head_commit.message, 'skip ci')" # public; ignore commits with `[skip ci]`
 
     runs-on: ubuntu-latest
     steps:
@@ -33,13 +33,13 @@ jobs:
           args: "bootstrap"
 
       - name: Formating code
-        run: npm run format:check
+        run: npm run ci:format:check
 
-      - name: Linter code
-        run: npm run lint
+      # - name: Linter code
+      #   run: npm run ci:lint
 
       - name: Testing projects
-        run: npm run test
+        run: npm run ci:test
 
       - run: git config --global user.email ${{ secrets.GIT_USER_EMAIL }}
       - run: git config --global user.name ${{ secrets.GIT_USER_NAME }}
@@ -50,24 +50,26 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # DOCKER HUB LOGIN
-      - name: Login to docker hub
-        if: success()
-        uses: actions-hub/docker/login@master
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-
       # Print what changed
       - run: ./node_modules/.bin/lerna changed
 
       - name: Create a new version
         run: yarn new-version
 
+      - run: git tag
+
       - name: Get last changed tag
         run: |
-          echo "::set-env name=LATEST_TAG::$(git describe --tags --abbrev=0)"
+          echo "::set-env name=LATEST_TAG::$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p)"
 
       - run: echo "$LATEST_TAG"
 
+      - name: Login to DockerHub
+        uses: crazy-max/ghaction-docker-login@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - run: yarn ci:deploy
+
+      - run: yarn ci:deploy:tag-version
