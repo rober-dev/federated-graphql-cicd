@@ -1,11 +1,7 @@
-FROM node:alpine
+FROM node:latest
 
 # Create app directory
 WORKDIR /usr/src/app
-
-## The wait.sh script
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
-RUN chmod +x /wait
 
 # Install lerna dependencies
 COPY package*.json ./
@@ -22,6 +18,6 @@ ENV NODE_ENV=production
 EXPOSE 4001
 
 # Run app
-CMD /wait && cd packages/api-auth && yarn start
+CMD cd packages/api-auth && yarn start
 
 USER node
