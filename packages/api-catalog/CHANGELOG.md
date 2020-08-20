@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.20](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.19...v3.0.20) (2020-08-20)
+
+
+
+## 3.0.18 (2020-08-20)
+
+**Note:** Version bump only for package @federated-graphql-cicd/api-catalog
+
+
+
+
+
 ## [3.0.18](https://github.com/rober-dev/federated-graphql-cicd/compare/v3.0.17...v3.0.18) (2020-08-20)
 
 
