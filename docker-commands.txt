@@ -1,3 +1,0 @@
-docker login registry.hub.docker.com
-docker build -f ./packages/api-catalog/Dockerfile -t sincronize/federated-graphql-cicd-api-catalog:latest .
-docker push sincronize/federated-graphql-cicd-api-catalog:latest
