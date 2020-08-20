@@ -26,6 +26,11 @@ const run = async () => {
   // Add express
   const app = express();
 
+  // Routes
+  app.get('/healthcheck', (req, res) => {
+    res.json('ok');
+  });
+
   // Apollo middlewares
   apolloServer.applyMiddleware({ app });
 

@@ -64,6 +64,11 @@ const run = async () => {
   };
   app.use(cors(corsOptions));
 
+  // Routes
+  app.get('/healthcheck', (req, res) => {
+    res.json('ok');
+  });
+
   // Apply Express middleware to Apollo
   apolloServer.applyMiddleware({ app, cors: corsOptions });
 
